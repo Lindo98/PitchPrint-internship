@@ -1,14 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>News-app</title>
   </head>
+
+  <nav>
+    <h1 class="Logo">Trending Online</h1>
+
+    <div class="buttons">
+      <button id="login">Login</button>
+      <button id="SignUp">Sign Up</button>
+    </div>
+  </nav>
   <body>
     <div id="app">
-      Write your app here.
+      <h1>Top headlines</h1>
+    </div>
+
+    <div>
+      <ul id="article-container"></ul>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
