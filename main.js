@@ -55,7 +55,7 @@ function nextSlide() {
 }
 
 function startAutoScroll() {
-  autoScrollInterval = setInterval(nextSlide, 8000); // Auto-scroll every 5 seconds
+  autoScrollInterval = setInterval(nextSlide, 5000); // Auto-scroll every 5 seconds
 }
 
 function stopAutoScroll() {
