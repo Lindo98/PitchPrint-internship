@@ -2,12 +2,15 @@ import "./style.css";
 
 const apiKey = "4563bca55c444df69bad2adf99a5b966";
 let currentIndex = 0;
+let articles = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch(`https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${apiKey}`);
+    const response = await fetch(
+      `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${apiKey}`
+    );
     const data = await response.json();
-    const articles = data.articles;
+    articles = data.articles;
 
     const carouselInner = document.querySelector(".carousel-slides");
     articles.forEach((article) => {
@@ -19,20 +22,65 @@ document.addEventListener("DOMContentLoaded", async () => {
       };
       carouselInner.appendChild(imgElement);
     });
+
+    updateCarousel();
   } catch (error) {
     console.error(error);
   }
 });
-    
 
+function updateCarousel() {
+  const carouselInner = document.querySelector(".carousel-slides");
+  carouselInner.style.transform = `translateX(-${currentIndex * 50}%)`;
+}
+
+function prevSlide() {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = articles.length - 2;
+  }
+  updateCarousel();
+  resetAutoScroll();
+}
+
+function nextSlide() {
+  if (currentIndex < articles.length - 2) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
+  updateCarousel();
+  resetAutoScroll();
+}
+
+function startAutoScroll() {
+  autoScrollInterval = setInterval(nextSlide, 8000); // Auto-scroll every 5 seconds
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+function resetAutoScroll() {
+  stopAutoScroll();
+  startAutoScroll();
+}
+
+// Add event listeners to stop auto-scrolling when user interacts with carousel
+document
+  .querySelector(".carousel")
+  .addEventListener("mouseenter", stopAutoScroll);
+document
+  .querySelector(".carousel")
+  .addEventListener("mouseleave", startAutoScroll);
 
 fetch(`https://newsapi.org/v2/top-headlines?country=za&apiKey=${apiKey}`).then(
   (response) => {
     response.json().then((data) => {
       const newContainer = document.getElementById("article-container");
 
-
-      // code snippet iterates over an array of articles and creates a new HTML <article> 
+      // code snippet iterates over an array of articles and creates a new HTML <article>
       //element for each one, appending it to a container element
 
       data.articles.forEach((article) => {

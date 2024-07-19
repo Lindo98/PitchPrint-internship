@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: roboto, sans-serif;
@@ -14,12 +16,74 @@ nav {
   margin: 20px;
 }
 
-.Logo {
-  font-size: 30px;
-  font-weight: bold;
-  color: blue;
+.buttons {
+  display: flex;
+  align-items: center;
 }
 
+.login {
+  margin: 10px;
+  padding: 10px;
+  background-color: #436c76;
+  color: white;
+  border: 1px solid #436c76;
+  border-radius: 5px;
+  cursor: pointer;
+  font: bold;
+}
+
+.register {
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  font: bold;
+  color: #436c76;
+  border: 2px solid #436c76;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register:hover {
+  background-color: #436c76;
+  color: white;
+}
+
+.Logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #436C76;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+  padding: 30px;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slides img {
+  width: 40%;
+  flex-shrink: 0;
+  padding: 10px;
+  overflow: auto;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
 
 #app {
   text-align: center;
@@ -28,6 +92,9 @@ nav {
 
 h1 {
   text-align: center;
+  margin-top: 40px;
+  font-size: 40px;
+  color: #436C76;
 }
 
 h2 {
