@@ -11,14 +11,20 @@
     <title>News-app</title>
   </head>
 
-  <nav>
+  <nav class="navbar">
     <h1 class="Logo">Trending Online</h1>
 
     <div class="buttons">
-      <button >All News-app</button>
+      <button>All News-app</button>
     </div>
   </nav>
   <body>
+    <div class="carousel">
+      <div class="carousel-slides"></div>
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
     <div id="app">
       <h1>Top headlines(SA)</h1>
     </div>

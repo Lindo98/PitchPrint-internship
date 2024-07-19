@@ -7,6 +7,10 @@ fetch(`https://newsapi.org/v2/top-headlines?country=za&apiKey=${apiKey}`).then(
     response.json().then((data) => {
       const newContainer = document.getElementById("article-container");
 
+
+      // code snippet iterates over an array of articles and creates a new HTML <article> 
+      //element for each one, appending it to a container element
+      
       data.articles.forEach((article) => {
         const newArticle = document.createElement("article");
         newArticle.classList.add("article");

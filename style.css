@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: roboto, sans-serif;
-  background-color: aquamarine;
+  background-color: #fffdd0;
 }
 
 nav {
@@ -9,7 +9,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ padding: 10px;
+  margin: 20px;
 }
 
 .Logo {
@@ -33,7 +35,6 @@ h2 {
   font-size: 25px;
 }
 
-
 img {
   width: 100%;
 }
@@ -42,7 +43,6 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-  background-color: white;
   padding: 20px;
   margin: 16px;
 }
