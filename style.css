@@ -33,6 +33,7 @@ h2 {
   font-size: 25px;
 }
 
+
 img {
   width: 100%;
 }
@@ -43,6 +44,7 @@ img {
   grid-gap: 20px;
   background-color: white;
   padding: 20px;
+  margin: 16px;
 }
 
 #article-container article {
