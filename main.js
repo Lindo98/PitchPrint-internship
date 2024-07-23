@@ -4,6 +4,8 @@ const apiKey = "4563bca55c444df69bad2adf99a5b966";
 let currentIndex = 0;
 let articles = [];
 
+// Carousel
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const response = await fetch(
@@ -67,13 +69,15 @@ function resetAutoScroll() {
   startAutoScroll();
 }
 
-// Add event listeners to stop auto-scrolling when user interacts with carousel
+// Added event listeners to stop auto-scrolling when user interacts with carousel
 document
   .querySelector(".carousel")
   .addEventListener("mouseenter", stopAutoScroll);
 document
   .querySelector(".carousel")
   .addEventListener("mouseleave", startAutoScroll);
+
+// following code is for the news articles
 
 fetch(`https://newsapi.org/v2/top-headlines?country=za&apiKey=${apiKey}`).then(
   (response) => {
